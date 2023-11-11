@@ -23,7 +23,11 @@ function App() {
           .map((food) => {
             return (
               <div key={food.name}>
-                <FoodBox food={food} />
+                <FoodBox
+                  food={food}
+                  allFoods={allFoods}
+                  setAllFoods={setAllFoods}
+                />
               </div>
             );
           })}

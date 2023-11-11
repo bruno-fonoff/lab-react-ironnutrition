@@ -68,7 +68,7 @@ function AddFoodForm({ allFoods, setAllFoods }) {
         name="servings"
       />
 
-      <Button type="primary" size={size}>
+      <Button type="primary" size={size} onClick={handleSubmit}>
         Primary
       </Button>
 
