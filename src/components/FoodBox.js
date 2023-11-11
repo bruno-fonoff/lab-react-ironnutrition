@@ -1,5 +1,4 @@
 import { Card, Col, Button } from 'antd';
-import AddFoodForm from './AddFoodForm';
 
 // Iteration 2
 function FoodBox({ food, allFoods, setAllFoods }) {

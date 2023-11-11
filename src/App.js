@@ -10,7 +10,8 @@ function App() {
   const [allFoods, setAllFoods] = useState(foods);
   const [showAddForm, setshowAddForm] = useState(false);
   const [search, setSearch] = useState('');
-  //console.log(allFoods);
+  const [filteredFoods, setFilteredFoods] = useState(allFoods);
+
   function handleShowForm() {
     setshowAddForm(!showAddForm);
   }
@@ -18,7 +19,7 @@ function App() {
     <>
       <div className="App">
         <Search search={search} setSearch={setSearch} />
-        {/* ITERAÇÃO 1 /3 - OK */}
+
         {allFoods
           .filter((food) => {
             return food.name.toLowerCase().includes(search.toLowerCase());
@@ -34,7 +35,12 @@ function App() {
               </div>
             );
           })}
-      </div>
+        <h1>
+          {allFoods.length === 0
+            ? 'Oops! There is no more content to show.'
+            : ''}
+        </h1>
+      </div>{' '}
       <div className="buttonShowHide">
         <Button onClick={handleShowForm}>
           {showAddForm === true ? 'Hide Form' : 'Add New Food'}
