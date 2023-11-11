@@ -12,22 +12,24 @@ function App() {
   //console.log(allFoods);
 
   return (
-    <div className="App">
-      <Search search={search} setSearch={setSearch} />
-      {/* ITERAÇÃO 1 /3 - OK */}
-      {allFoods
-        .filter((food) => {
-          return food.name.toLowerCase().includes(search.toLowerCase());
-        })
-        .map((food) => {
-          return (
-            <div key={food.name}>
-              <FoodBox food={food} />
-            </div>
-          );
-        })}
+    <>
+      <div className="App">
+        <Search search={search} setSearch={setSearch} />
+        {/* ITERAÇÃO 1 /3 - OK */}
+        {allFoods
+          .filter((food) => {
+            return food.name.toLowerCase().includes(search.toLowerCase());
+          })
+          .map((food) => {
+            return (
+              <div key={food.name}>
+                <FoodBox food={food} />
+              </div>
+            );
+          })}
+      </div>
       <AddFoodForm allFoods={allFoods} setAllFoods={setAllFoods} />
-    </div>
+    </>
   );
 }
 export default App;

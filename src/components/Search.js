@@ -10,7 +10,6 @@ function Search({ search, setSearch }) {
     <>
       <Divider>Search</Divider>
 
-      <label>Search</label>
       <Input
         name="name"
         value={search}

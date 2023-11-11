@@ -1,0 +1,21 @@
+.labelForm {
+  color: brown;
+  font-weight: bolder;
+}
+.inputForm {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  border: solid rgb(160, 49, 49) 2px;
+}
+
+button {
+  margin-top: 15px;
+}
+
+form {
+  margin: auto;
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

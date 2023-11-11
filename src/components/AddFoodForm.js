@@ -1,8 +1,10 @@
-import { Divider, Input } from 'antd';
+import { Divider, Input, Button, Flex } from 'antd';
 import { useState } from 'react';
+import foodForm from './foodForm.css';
 
 // Iteration 4
 function AddFoodForm({ allFoods, setAllFoods }) {
+  const [size, setSize] = useState('large');
   const [addFood, setAddFood] = useState({
     name: '',
     image: '',
@@ -30,45 +32,50 @@ function AddFoodForm({ allFoods, setAllFoods }) {
     <form>
       <Divider>Add Food Entry</Divider>
 
-      <label style={{ width: '100px', margin: '20px' }}>Name</label>
+      <label className="labelForm">Name</label>
       <Input
-        style={{ width: '500px', margin: '20px' }}
+        className="inputForm"
         value={addFood.name}
         type="text"
         onChange={handleChange}
         name="name"
       />
 
-      <label style={{ width: '100px', margin: '20px' }}>Image</label>
+      <label className="labelForm">Image</label>
       <Input
-        style={{ width: '500px', margin: '20px' }}
+        className="inputForm"
         value={addFood.image}
         type="text"
         onChange={handleChange}
         name="image"
       />
 
-      <label style={{ width: '100px', margin: '20px' }}>Calories</label>
+      <label className="labelForm">Calories</label>
       <Input
-        style={{ width: '500px', margin: '20px' }}
+        className="inputForm"
         value={addFood.calories}
         type="text"
         onChange={handleChange}
         name="calories"
       />
 
-      <label style={{ width: '100px', margin: '20px' }}>Servings</label>
+      <label className="labelForm">Servings</label>
       <Input
-        style={{ width: '500px', margin: '20px' }}
+        className="inputForm"
         value={addFood.servings}
         type="text"
         onChange={handleChange}
         name="servings"
       />
 
-      <button onClick={handleSubmit} type="submit">
-        Create
-      </button>
+      <Button type="primary" size={size}>
+        Primary
+      </Button>
+
+      {/* <Button onClick={handleSubmit} type="primary">
+        Primary
+      </Button> */}
+      {/* <button>Create</button> */}
     </form>
   );
 }
