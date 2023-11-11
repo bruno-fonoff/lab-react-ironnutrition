@@ -4,13 +4,16 @@ import { useState } from 'react';
 import FoodBox from './components/FoodBox';
 import AddFoodForm from './components/AddFoodForm';
 import Search from './components/Search';
+import { Button } from 'antd';
 
 function App() {
   const [allFoods, setAllFoods] = useState(foods);
-
+  const [showAddForm, setshowAddForm] = useState(false);
   const [search, setSearch] = useState('');
   //console.log(allFoods);
-
+  function handleShowForm() {
+    setshowAddForm(!showAddForm);
+  }
   return (
     <>
       <div className="App">
@@ -32,7 +35,14 @@ function App() {
             );
           })}
       </div>
-      <AddFoodForm allFoods={allFoods} setAllFoods={setAllFoods} />
+      <div className="buttonShowHide">
+        <Button onClick={handleShowForm}>
+          {showAddForm === true ? 'Hide Form' : 'Add New Food'}
+        </Button>
+      </div>
+      {showAddForm === true && (
+        <AddFoodForm allFoods={allFoods} setAllFoods={setAllFoods} />
+      )}
     </>
   );
 }
